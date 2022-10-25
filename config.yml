@@ -69,3 +69,19 @@
   become: true
   roles:
     - { role: Kibana, target_ip: 192.168.56.128, ip_host: 192.168.56.130, gpg_key_kibana: https://artifacts.elastic.co/GPG-KEY-elasticsearch }
+  
+- hosts: CentOS
+  tags: ls
+  become: true
+  roles: 
+    - LampStack_CentOS
+
+- hosts: Ubuntu
+  tags: ls
+  become: true
+  roles: 
+    - LampStack_Ubuntu
+    
+    
+    
+    
