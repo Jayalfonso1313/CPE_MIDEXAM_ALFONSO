@@ -29,46 +29,46 @@
       state: latest
     when: ansible_distribution == "CentOS"
 
-- hosts: Ubuntu
-  become: true
-  roles:
-    - Nagios_Ubuntu
+#- hosts: Ubuntu
+#  become: true
+#  roles:
+#   - Nagios_Ubuntu
 
-- hosts: CentOS
-  become: true
-  roles:
-    - Nagios_CentOS
+#- hosts: CentOS
+#  become: true
+#  roles:
+#    - Nagios_CentOS
 
-- hosts: Ubuntu
-  become: true
-  roles:
-    - role: Prometheus_Ubuntu
-      source: https://github.com/prometheus/prometheus/releases/download/v2.39.1/prometheus-2.39.1.linux-amd64.tar.gz
+#- hosts: Ubuntu
+#  become: true
+#  roles:
+#    - role: Prometheus_Ubuntu
+#      source: https://github.com/prometheus/prometheus/releases/download/v2.39.1/prometheus-2.39.1.linux-amd64.tar.gz
 
-- hosts: CentOS
-  become: true
-  roles:
-    - role: Prometheus_CentOS
-      source: https://github.com/prometheus/prometheus/releases/download/v2.39.1/prometheus-2.39.1.linux-amd64.tar.gz
+#- hosts: CentOS
+#  become: true
+#  roles:
+#    - role: Prometheus_CentOS
+#      source: https://github.com/prometheus/prometheus/releases/download/v2.39.1/prometheus-2.39.1.linux-amd64.tar.gz
 
-- hosts: ElasticSearch
-  tags: es
-  become: true
-  roles:
-    - { role: ElasticSearch, ip_host: 192.168.56.128 }
+#- hosts: ElasticSearch
+#  tags: es
+#  become: true
+#  roles:
+#    - { role: ElasticSearch, ip_host: 192.168.56.128 }
 
-- hosts: Logstash
-  tags: Logstash
-  become: true
-  roles:
-    - role: Logstash
-      gpg_key_logstash: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+#- hosts: Logstash
+#  tags: Logstash
+#  become: true
+#  roles:
+#    - role: Logstash
+#      gpg_key_logstash: https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
-- hosts: Kibana
-  tags: Kibana
-  become: true
-  roles:
-    - { role: Kibana, target_ip: 192.168.56.128, ip_host: 192.168.56.130, gpg_key_kibana: https://artifacts.elastic.co/GPG-KEY-elasticsearch }
+#- hosts: Kibana
+#  tags: Kibana
+#  become: true
+#  roles:
+#    - { role: Kibana, target_ip: 192.168.56.128, ip_host: 192.168.56.130, gpg_key_kibana: https://artifacts.elastic.co/GPG-KEY-elasticsearch }
   
 - hosts: CentOS
   tags: ls
